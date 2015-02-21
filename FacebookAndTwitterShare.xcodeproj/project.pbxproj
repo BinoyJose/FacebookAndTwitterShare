@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424EE9DE1A98D4C9009EF8F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424EE9DD1A98D4C9009EF8F0 /* FacebookSDK.framework */; };
+		424EE9E31A98DAD0009EF8F0 /* FacebookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424EE9E21A98DAD0009EF8F0 /* FacebookVC.swift */; };
+		424EE9E51A98DDE7009EF8F0 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424EE9E41A98DDE7009EF8F0 /* NewViewController.swift */; };
 		42C165B71A979345004B119F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C165B61A979345004B119F /* AppDelegate.swift */; };
 		42C165BA1A979345004B119F /* FacebookAndTwitterShare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42C165B81A979345004B119F /* FacebookAndTwitterShare.xcdatamodeld */; };
 		42C165BC1A979345004B119F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C165BB1A979345004B119F /* ViewController.swift */; };
@@ -14,6 +17,7 @@
 		42C165C11A979345004B119F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C165C01A979345004B119F /* Images.xcassets */; };
 		42C165C41A979345004B119F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C165C21A979345004B119F /* LaunchScreen.xib */; };
 		42C165D01A979345004B119F /* FacebookAndTwitterShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C165CF1A979345004B119F /* FacebookAndTwitterShareTests.swift */; };
+		42C165DA1A97956B004B119F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C165D91A97956B004B119F /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		424EE9DD1A98D4C9009EF8F0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		424EE9DF1A98D67A009EF8F0 /* FacebookAndTwitterShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookAndTwitterShare-Bridging-Header.h"; sourceTree = "<group>"; };
+		424EE9E21A98DAD0009EF8F0 /* FacebookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookVC.swift; sourceTree = "<group>"; };
+		424EE9E41A98DDE7009EF8F0 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		42C165B11A979345004B119F /* FacebookAndTwitterShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookAndTwitterShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C165B51A979345004B119F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C165B61A979345004B119F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +46,7 @@
 		42C165C91A979345004B119F /* FacebookAndTwitterShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacebookAndTwitterShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C165CE1A979345004B119F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C165CF1A979345004B119F /* FacebookAndTwitterShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAndTwitterShareTests.swift; sourceTree = "<group>"; };
+		42C165D91A97956B004B119F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C165DA1A97956B004B119F /* Social.framework in Frameworks */,
+				424EE9DE1A98D4C9009EF8F0 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +72,8 @@
 		42C165A81A979345004B119F = {
 			isa = PBXGroup;
 			children = (
+				424EE9DD1A98D4C9009EF8F0 /* FacebookSDK.framework */,
+				42C165D91A97956B004B119F /* Social.framework */,
 				42C165B31A979345004B119F /* FacebookAndTwitterShare */,
 				42C165CC1A979345004B119F /* FacebookAndTwitterShareTests */,
 				42C165B21A979345004B119F /* Products */,
@@ -81,11 +94,14 @@
 			children = (
 				42C165B61A979345004B119F /* AppDelegate.swift */,
 				42C165BB1A979345004B119F /* ViewController.swift */,
+				424EE9E21A98DAD0009EF8F0 /* FacebookVC.swift */,
+				424EE9E41A98DDE7009EF8F0 /* NewViewController.swift */,
 				42C165BD1A979345004B119F /* Main.storyboard */,
 				42C165C01A979345004B119F /* Images.xcassets */,
 				42C165C21A979345004B119F /* LaunchScreen.xib */,
 				42C165B81A979345004B119F /* FacebookAndTwitterShare.xcdatamodeld */,
 				42C165B41A979345004B119F /* Supporting Files */,
+				424EE9DF1A98D67A009EF8F0 /* FacebookAndTwitterShare-Bridging-Header.h */,
 			);
 			path = FacebookAndTwitterShare;
 			sourceTree = "<group>";
@@ -178,6 +194,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = 42C165A81A979345004B119F;
 			productRefGroup = 42C165B21A979345004B119F /* Products */;
@@ -217,6 +234,8 @@
 			files = (
 				42C165BC1A979345004B119F /* ViewController.swift in Sources */,
 				42C165B71A979345004B119F /* AppDelegate.swift in Sources */,
+				424EE9E51A98DDE7009EF8F0 /* NewViewController.swift in Sources */,
+				424EE9E31A98DAD0009EF8F0 /* FacebookVC.swift in Sources */,
 				42C165BA1A979345004B119F /* FacebookAndTwitterShare.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,9 +359,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FacebookAndTwitterShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FacebookAndTwitterShare/FacebookAndTwitterShare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +377,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FacebookAndTwitterShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FacebookAndTwitterShare/FacebookAndTwitterShare-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +443,7 @@
 				42C165D51A979345004B119F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42C165D61A979345004B119F /* Build configuration list for PBXNativeTarget "FacebookAndTwitterShareTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +452,7 @@
 				42C165D81A979345004B119F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

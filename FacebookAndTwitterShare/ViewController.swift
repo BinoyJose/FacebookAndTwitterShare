@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
 
     @IBAction func twitterButtonPushed(sender: UIButton) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
@@ -38,6 +39,8 @@ class ViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
+    
+    // MARK: With out using Facebook SDK
     
     @IBAction func facebookButtonPushed(sender: UIButton) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){

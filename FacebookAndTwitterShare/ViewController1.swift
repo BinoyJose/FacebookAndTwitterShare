@@ -12,30 +12,30 @@ import UIKit
 
 class ViewController1: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    let fbHelper = FBHelper();
-    var sources:[AlbumModel] = [AlbumModel]();
-    var currentAlbumModel = AlbumModel(name: "", link: "", cover:"");
-    var destController:AlbumViewController!;
+    let fbHelper = FBHelper()
+    var sources:[AlbumModel] = [AlbumModel]()
+    var currentAlbumModel = AlbumModel(name: "", link: "", cover:"")
+    var destController:AlbumViewController!
     
     @IBOutlet var albumTable : UITableView!
     @IBOutlet var imgProfile : UIImageView!
     
     @IBAction func fetchDataAction(sender : AnyObject) {
-        fbHelper.fetchAlbum();
+        fbHelper.fetchAlbum()
     }
     @IBOutlet var btnLoginLogout : UIButton!
     
     @IBAction func facebookLogoutAction(sender : AnyObject) {
-        self.fbHelper.logout();
-        self.btnLoginLogout.titleLabel?.text = "Login to Facebook";
+        self.fbHelper.logout()
+        self.btnLoginLogout.titleLabel?.text = "Login to Facebook"
     }
     @IBAction func facebookLoginAction(sender : AnyObject) {
         
         if(self.btnLoginLogout.titleLabel?.text == "Login to Facebook"){
-            fbHelper.login();
+            fbHelper.login()
         }
         else{
-            fbHelper.logout();
+            fbHelper.logout()
         }
         
     }
@@ -49,8 +49,8 @@ class ViewController1: UIViewController,UITableViewDataSource,UITableViewDelegat
         
         
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("executeHandle:"), name: "PostData", object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("executeAlbum:"), name: "albumNotification", object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("executeHandle:"), name: "PostData", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("executeAlbum:"), name: "albumNotification", object: nil)
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -64,11 +64,11 @@ class ViewController1: UIViewController,UITableViewDataSource,UITableViewDelegat
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
     {
-        self.currentAlbumModel = self.sources[indexPath.row];
+        self.currentAlbumModel = self.sources[indexPath.row]
         if(self.destController != nil){
-            self.destController!.albumModel = self.currentAlbumModel;
-            self.destController!.fbHelper = self.fbHelper;
-            self.destController!.executePhoto();
+            self.destController!.albumModel = self.currentAlbumModel
+            self.destController!.fbHelper = self.fbHelper
+            self.destController!.executePhoto()
         }
         performSegueWithIdentifier("photoSegue", sender: self)
         
@@ -80,57 +80,57 @@ class ViewController1: UIViewController,UITableViewDataSource,UITableViewDelegat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-                var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell;
-                let data = self.sources[indexPath.row];
-                cell.textLabel?.text = data.name;
-                cell.detailTextLabel?.text = data.link;
+                var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+                let data = self.sources[indexPath.row]
+                cell.textLabel?.text = data.name
+                cell.detailTextLabel?.text = data.link
                 if(data.cover != ""){
-                    let coverPhotoURL = NSURL(string: data.cover);
-                    let coverPhotoData = NSData(contentsOfURL: coverPhotoURL);
+                    let coverPhotoURL = NSURL(string: data.cover)
+                    let coverPhotoData = NSData(contentsOfURL: coverPhotoURL)
         
-                    cell.imageView?.image = UIImage(data: coverPhotoData);
+                    cell.imageView?.image = UIImage(data: coverPhotoData)
                     
                 }
-                return cell;
+                return cell
     }
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.sources.count;
+            return self.sources.count
         
     }
     func executeAlbum(notification:NSNotification){
-        //let data = notification.userInfo["data"] as? [AlbumModel];
+        //let data = notification.userInfo["data"] as? [AlbumModel]
         
         // could be an Error
         let data = (notification.userInfo?["data"] as NSArray) as [AlbumModel]
-        self.sources = data;
-        self.albumTable.reloadData();
+        self.sources = data
+        self.albumTable.reloadData()
     }
     
     func executeHandle(notification:NSNotification){
-        let userData = notification.object as User;
+        let userData = notification.object as User
         
-        let name = userData.name as String;
-        let email = userData.email as String;
-        //lblName.text = name;
-        //lblEmail.text = email;
-        imgProfile.image = userData.image;
-        self.btnLoginLogout.titleLabel?.text = "Logout";
+        let name = userData.name as String
+        let email = userData.email as String
+        //lblName.text = name
+        //lblEmail.text = email
+        imgProfile.image = userData.image
+        self.btnLoginLogout.titleLabel?.text = "Logout"
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "photoSegue"){
-            let destinitionController = segue.destinationViewController as AlbumViewController;
-            destinitionController.albumModel = self.currentAlbumModel;
-           // self.destController = destinitionController;
+            let destinitionController = segue.destinationViewController as AlbumViewController
+            destinitionController.albumModel = self.currentAlbumModel
+           // self.destController = destinitionController
         }
     }
     
     override func viewDidDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "PostData", object: nil);
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "albumNotification", object: nil);
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "PostData", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "albumNotification", object: nil)
     }
 
     

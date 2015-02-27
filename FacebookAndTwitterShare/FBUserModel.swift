@@ -10,12 +10,12 @@ import Foundation
 
 
 class User{
-    let email:AnyObject = "";
-    let name:AnyObject = "";
-    let image:UIImage;
+    let email:AnyObject = ""
+    let name:AnyObject = ""
+    let image:UIImage
     init(email:AnyObject, name:AnyObject, image:UIImage){
         self.image = image
-        self.name = name;
-        self.email=email;
+        self.name = name
+        self.email=email
     }
 }

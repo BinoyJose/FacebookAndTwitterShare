@@ -5,6 +5,8 @@
 //  Created by Mohsin on 28/02/2015.
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
+// http://selise.ch/build-a-facebook-album-browser-using-swift/
+
 
 import Foundation
 import UIKit

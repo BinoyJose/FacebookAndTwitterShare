@@ -84,12 +84,12 @@
 		42B06D461AA110FF00A15E48 /* Facebook Photo Album */ = {
 			isa = PBXGroup;
 			children = (
-				42B06D381AA1003E00A15E48 /* FBHelper.swift */,
-				42B06D3A1AA100A700A15E48 /* FBUserModel.swift */,
-				42B06D3C1AA100EC00A15E48 /* AlbumModel.swift */,
 				42B06D3E1AA1044400A15E48 /* ViewController1.swift */,
 				42B06D401AA1071400A15E48 /* AlbumViewController.swift */,
 				42B06D441AA1086900A15E48 /* SinglePhotoViewController.swift */,
+				42B06D381AA1003E00A15E48 /* FBHelper.swift */,
+				42B06D3A1AA100A700A15E48 /* FBUserModel.swift */,
+				42B06D3C1AA100EC00A15E48 /* AlbumModel.swift */,
 			);
 			name = "Facebook Photo Album";
 			sourceTree = "<group>";

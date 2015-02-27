@@ -10,6 +10,12 @@
 		424EE9DE1A98D4C9009EF8F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424EE9DD1A98D4C9009EF8F0 /* FacebookSDK.framework */; };
 		424EE9E31A98DAD0009EF8F0 /* FacebookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424EE9E21A98DAD0009EF8F0 /* FacebookVC.swift */; };
 		424EE9E51A98DDE7009EF8F0 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424EE9E41A98DDE7009EF8F0 /* NewViewController.swift */; };
+		42B06D391AA1003E00A15E48 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B06D381AA1003E00A15E48 /* FBHelper.swift */; };
+		42B06D3B1AA100A700A15E48 /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B06D3A1AA100A700A15E48 /* FBUserModel.swift */; };
+		42B06D3D1AA100EC00A15E48 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B06D3C1AA100EC00A15E48 /* AlbumModel.swift */; };
+		42B06D3F1AA1044400A15E48 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B06D3E1AA1044400A15E48 /* ViewController1.swift */; };
+		42B06D411AA1071400A15E48 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B06D401AA1071400A15E48 /* AlbumViewController.swift */; };
+		42B06D451AA1086900A15E48 /* SinglePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B06D441AA1086900A15E48 /* SinglePhotoViewController.swift */; };
 		42C165B71A979345004B119F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C165B61A979345004B119F /* AppDelegate.swift */; };
 		42C165BA1A979345004B119F /* FacebookAndTwitterShare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42C165B81A979345004B119F /* FacebookAndTwitterShare.xcdatamodeld */; };
 		42C165BC1A979345004B119F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C165BB1A979345004B119F /* ViewController.swift */; };
@@ -35,6 +41,12 @@
 		424EE9DF1A98D67A009EF8F0 /* FacebookAndTwitterShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookAndTwitterShare-Bridging-Header.h"; sourceTree = "<group>"; };
 		424EE9E21A98DAD0009EF8F0 /* FacebookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookVC.swift; sourceTree = "<group>"; };
 		424EE9E41A98DDE7009EF8F0 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		42B06D381AA1003E00A15E48 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
+		42B06D3A1AA100A700A15E48 /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
+		42B06D3C1AA100EC00A15E48 /* AlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		42B06D3E1AA1044400A15E48 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		42B06D401AA1071400A15E48 /* AlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		42B06D441AA1086900A15E48 /* SinglePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePhotoViewController.swift; sourceTree = "<group>"; };
 		42C165B11A979345004B119F /* FacebookAndTwitterShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookAndTwitterShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C165B51A979345004B119F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C165B61A979345004B119F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +81,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42B06D461AA110FF00A15E48 /* Facebook Photo Album */ = {
+			isa = PBXGroup;
+			children = (
+				42B06D381AA1003E00A15E48 /* FBHelper.swift */,
+				42B06D3A1AA100A700A15E48 /* FBUserModel.swift */,
+				42B06D3C1AA100EC00A15E48 /* AlbumModel.swift */,
+				42B06D3E1AA1044400A15E48 /* ViewController1.swift */,
+				42B06D401AA1071400A15E48 /* AlbumViewController.swift */,
+				42B06D441AA1086900A15E48 /* SinglePhotoViewController.swift */,
+			);
+			name = "Facebook Photo Album";
+			sourceTree = "<group>";
+		};
 		42C165A81A979345004B119F = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +121,7 @@
 				42C165BB1A979345004B119F /* ViewController.swift */,
 				424EE9E21A98DAD0009EF8F0 /* FacebookVC.swift */,
 				424EE9E41A98DDE7009EF8F0 /* NewViewController.swift */,
+				42B06D461AA110FF00A15E48 /* Facebook Photo Album */,
 				42C165BD1A979345004B119F /* Main.storyboard */,
 				42C165C01A979345004B119F /* Images.xcassets */,
 				42C165C21A979345004B119F /* LaunchScreen.xib */,
@@ -232,9 +258,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B06D3F1AA1044400A15E48 /* ViewController1.swift in Sources */,
+				42B06D3B1AA100A700A15E48 /* FBUserModel.swift in Sources */,
 				42C165BC1A979345004B119F /* ViewController.swift in Sources */,
 				42C165B71A979345004B119F /* AppDelegate.swift in Sources */,
 				424EE9E51A98DDE7009EF8F0 /* NewViewController.swift in Sources */,
+				42B06D391AA1003E00A15E48 /* FBHelper.swift in Sources */,
+				42B06D411AA1071400A15E48 /* AlbumViewController.swift in Sources */,
+				42B06D451AA1086900A15E48 /* SinglePhotoViewController.swift in Sources */,
+				42B06D3D1AA100EC00A15E48 /* AlbumModel.swift in Sources */,
 				424EE9E31A98DAD0009EF8F0 /* FacebookVC.swift in Sources */,
 				42C165BA1A979345004B119F /* FacebookAndTwitterShare.xcdatamodeld in Sources */,
 			);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Inv-ET-9hz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t05-qz-kwN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -73,6 +73,129 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="399" y="120"/>
+        </scene>
+        <!--View Controller1-->
+        <scene sceneID="JqZ-kC-a5n">
+            <objects>
+                <viewController id="Gv1-5x-MmR" customClass="ViewController1" customModule="FacebookAndTwitterShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CsP-ox-MT9"/>
+                        <viewControllerLayoutGuide type="bottom" id="eaf-CF-yvw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JE4-1u-ITx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxq-fr-VeS">
+                                <rect key="frame" x="-5" y="60" width="226" height="45"/>
+                                <state key="normal" title="Login to Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookLoginAction:" destination="Gv1-5x-MmR" eventType="touchUpInside" id="PRD-go-gvb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL8-ao-xfL">
+                                <rect key="frame" x="-5" y="107" width="226" height="45"/>
+                                <state key="normal" title="Fetch Albums">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fetchDataAction:" destination="Gv1-5x-MmR" eventType="touchUpInside" id="f0D-xs-79E"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="10k-hL-Ili">
+                                <rect key="frame" x="25" y="170" width="271" height="322"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="c5D-xV-PJa">
+                                        <rect key="frame" x="0.0" y="0.0" width="271" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c5D-xV-PJa" id="ONQ-VV-YHL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gv1-5x-MmR" id="sP0-GX-DVS"/>
+                                    <outlet property="delegate" destination="Gv1-5x-MmR" id="t3h-AN-eWY"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zep-Ol-uk8">
+                                <rect key="frame" x="202" y="62" width="102" height="100"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="afK-Fw-wMs"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="albumTable" destination="10k-hL-Ili" id="Emr-Yr-weY"/>
+                        <outlet property="btnLoginLogout" destination="sxq-fr-VeS" id="wDI-S2-kAp"/>
+                        <outlet property="imgProfile" destination="Zep-Ol-uk8" id="CqD-8A-9S6"/>
+                        <segue destination="XWm-jg-4ku" kind="show" identifier="photoSegue" id="son-oP-3QH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFm-wu-Nbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399" y="833"/>
+        </scene>
+        <!--Album View Controller-->
+        <scene sceneID="cv9-Sp-Ldp">
+            <objects>
+                <tableViewController storyboardIdentifier="AlbumVCID" id="XWm-jg-4ku" customClass="AlbumViewController" customModule="FacebookAndTwitterShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cb8-K9-7Cr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="p5V-Se-1Zb">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p5V-Se-1Zb" id="mnc-Ja-prn">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XWm-jg-4ku" id="eEt-mc-mca"/>
+                            <outlet property="delegate" destination="XWm-jg-4ku" id="58W-2O-nhn"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="4H0-91-qwa" kind="show" identifier="ShowPhotoSeg" id="cMr-6Z-xx5"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S29-Vf-aJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="828"/>
+        </scene>
+        <!--Single Photo View Controller-->
+        <scene sceneID="qs3-VG-Spw">
+            <objects>
+                <viewController id="4H0-91-qwa" customClass="SinglePhotoViewController" customModule="FacebookAndTwitterShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pk0-GD-P3Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="erJ-fy-mGP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RK6-3w-o26">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKS-pS-ATh">
+                                <rect key="frame" x="26" y="82" width="269" height="365"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="img" destination="YKS-pS-ATh" id="8s9-JO-gzr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKu-RQ-Rhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1230" y="846"/>
         </scene>
         <!--FacebookVC-->
         <scene sceneID="YlQ-g7-hAp">
@@ -181,6 +304,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYk-WN-Avn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-83" y="120"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fzD-Fi-5O4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t05-qz-kwN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eTs-eU-y5o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gv1-5x-MmR" kind="relationship" relationship="rootViewController" id="sK9-63-vcZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eub-Bc-MLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-83" y="815"/>
         </scene>
     </scenes>
 </document>

@@ -13,11 +13,14 @@ class SinglePhotoViewController: UIViewController {
     
     @IBOutlet weak var img: UIImageView!
     var photo : UIImage!
+    var photoUrl : NSString!
     
     override func viewDidLoad() {
         
-        if self.photo != nil {
-            self.img.image = self.photo
+        if self.photoUrl != nil {
+            let url = NSURL(string: photoUrl)
+            let photoData = NSData(contentsOfURL: url)
+            self.img.image = UIImage(data: photoData)
         }
         super.viewDidLoad()
 

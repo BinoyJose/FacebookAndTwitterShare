@@ -14,7 +14,7 @@ class AlbumViewController: UITableViewController {
     var fbHelper:FBHelper?
     var sources:[UIImage] = [UIImage]()
     var selectedPhoto: UIImage!
-    var photoUrl : AnyObject!
+    var photosUrl : [NSString] = []
     
     var notific : AnyObject!
     
@@ -22,7 +22,8 @@ class AlbumViewController: UITableViewController {
     func photoExecuted(notification:NSNotification){
       //  let photos = notification.userInfo?["photos"]  as [UIImage]
         let photos = (notification.userInfo?["photos"] as NSArray) as [UIImage]
-       // let photoUrl = (notification.userInfo?["sources"] as NSArray) as [NSString]
+        // image url in string
+        photosUrl = (notification.userInfo?["photosUrl"] as NSArray) as [NSString]
         
         self.sources = photos
         self.tableView.reloadData()
@@ -52,14 +53,16 @@ class AlbumViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let photo = self.sources[indexPath.row]
         
-        //println(self.photoUrl[indexPath.row])
         
-        println(self.notific)
+
+        println(photosUrl[indexPath.row])
+        
+       // println(self.notific)
         
 
         
         
-        performSegueWithIdentifier("ShowPhotoSeg", sender: photo)
+        performSegueWithIdentifier("ShowPhotoSeg", sender: photosUrl[indexPath.row])
 
         //self.singlePhotoViewController!.loadPhoto()
         
@@ -97,7 +100,7 @@ class AlbumViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "ShowPhotoSeg"){
             let descVC = segue.destinationViewController as? SinglePhotoViewController
-            descVC?.photo = sender as UIImage
+            descVC?.photoUrl = sender as NSString
             
         }
     }

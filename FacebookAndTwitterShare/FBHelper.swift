@@ -26,7 +26,7 @@ class FBHelper{
                 let desc = obj.description
                 println(desc)
                 let name = obj.valueForKey("name") as String
-                println(name)
+               // println(name)
                 if(name == "ETC"){
                     let test=""
                 }
@@ -60,18 +60,23 @@ class FBHelper{
         }
         else{
             var pictures:[UIImage] = [UIImage]()
+            var picturesUrl:[NSString] = [NSString]()
+
             let graphData = result.valueForKey("data") as [FBGraphObject]
             var albums:[AlbumModel] =  [AlbumModel]()
             for obj:FBGraphObject in graphData{
                 println(obj.description)
                 let pictureURL = obj.valueForKey("picture") as String
                 let url = NSURL(string: pictureURL)
+                
+                picturesUrl.append(obj["source"] as String)
+                
                 let picData = NSData(contentsOfURL: url)
                 let img = UIImage(data: picData)
                 pictures.append(img)
             }
             
-            NSNotificationCenter.defaultCenter().postNotificationName("photoNotification", object: nil, userInfo: ["photos":pictures])
+            NSNotificationCenter.defaultCenter().postNotificationName("photoNotification", object: nil, userInfo: ["photos":pictures, "photosUrl": picturesUrl])
         }
     }
     
